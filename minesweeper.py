@@ -118,8 +118,11 @@ if __name__ == "__main__":
                     print("Please input 'A 1' format!")
 
                 result = make_selection(x_input, y_input)
-                ded = result[0]
-                cleared_squares += result[1]
+                if not isinstance(result,bool):
+                    ded = result[0]
+                    cleared_squares += result[1]
+                else:
+                    ded = True
             show_field(player_field)
             if cleared_squares == size**2 - mines:
                 print("Bravo! You have won!\nYou deserve a cookie!")
@@ -131,3 +134,4 @@ if __name__ == "__main__":
 
         if input("Would you like to play again? (Y/N):") not in ["Y","y"]:
             break
+        #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
